@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  props:{
+  props:{ // passed values  to show or no show image
     pokemonId:{
         type: Number,
         required: true
@@ -24,7 +24,6 @@ export default {
   },
 computed:{
     imgSrc(){
-        console.log('showPokemon:', this.showPokemon); 
         return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${this.pokemonId}.svg`
     }
 }
@@ -39,8 +38,8 @@ img {
     user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    -webkit-user-drag: none;
     -webkit-user-select: none;
+    -webkit-user-drag: none;
 }
 .hidden-pokemon {
     filter: brightness(0);

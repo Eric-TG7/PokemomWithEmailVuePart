@@ -1,15 +1,34 @@
 <template>
-  <PokemonPage />
+     <component :is="currentComponent" @end="ending" :counter="counter"  @updatecounter="updateCounter"/> 
+    <!-- <EndingEmits />  -->
 </template>
 
 <script>
 
 import PokemonPage from './pages/PokemonPage.vue'
+import EndingEmits from './components/EndingEmits.vue';
 export default {
-  name: 'App',
+  data(){
+    return{
+currentComponent: 'PokemonPage',
+counter: 0
+    }
+  },
   components: {
     PokemonPage,
+    EndingEmits
+    
+  },
+  methods:{
+ending(){
+  this.currentComponent = 'EndingEmits'
+},
+updateCounter(newCounter){ // updating to the props counterin ending emits
+  this.counter = newCounter;
+}
   }
+
+  
 }
 </script>
 

@@ -1,8 +1,8 @@
 <template>
 <div class = "options-container">
 <ul>
-<li v-for="pokemon in pokemons" :key="pokemon.id">
-    {{ pokemon.name }}
+<li v-for="pokemon in pokemons" :key="pokemon.id" @click ="$emit('selection',pokemon.id)">
+    {{ pokemon.name }} <!-- getting pokemon name in the containers and if touched activates emits-->
 </li>
 </ul>
 </div>
@@ -40,6 +40,7 @@ li:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh; 
+    margin: 240px 0 0 0; /* Ensure there's no margin affecting layout */
+    padding: 0;
 }
 </style>
