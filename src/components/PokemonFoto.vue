@@ -34,7 +34,7 @@ computed:{
 img {
     height: 200px;
     position: absolute;
-    right: 37%;
+    right: 44%;
     user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

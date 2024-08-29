@@ -3,7 +3,7 @@
   <div class="answer-container" v-else>
     <h1>Who is this pokemon?</h1>
   <PokemonFoto :pokemonId="pokemon.id"  :showPokemon="showPokemon"/>
-  <PokemonOptions :pokemons="pokemonArr"  @selection="checkAnswer"/>
+  <PokemonOptions     :class="{ untouchable: showAnswer }" :pokemons="pokemonArr"  @selection="checkAnswer"/>
   <div v-if="showAnswer" class="answer-container">
   <h2 >{{ message }}</h2>
   <button v-if="streak" @click="newgame"> new game</button>
@@ -91,5 +91,7 @@ this.tcounter = 0;
 </script>
 
 <style>
-
+.untouchable{
+  pointer-events: none;
+}
 </style>
